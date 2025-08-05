@@ -292,410 +292,306 @@ const slides = [
 
 
 
+    <>
+      {/* Embedded Styles for animations and responsiveness */}
+      <style>
+        {`
+          @keyframes shine {
+            0% { left: -75%; }
+            100% { left: 125%; }
+          }
 
-    {/* Bottom Images with overlay */}
-  <div style={{ display: "flex", justifyContent: "center", gap: "20px", flexWrap: "wrap" }}>
-    {/* Left Image */}
-    <div
-  style={{
-    position: "relative",
-    width: "300px",
-    height: "400px",
-    borderRadius: "6px",
-    overflow: "hidden", // to keep the shine inside the image border
-  }}
->
-  <img
-    src="https://craftedcampus.com/wp-content/uploads/2025/02/1705041419958.webp"
-    alt="Left"
-    style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: "6px" }}
-  />
-  <div
-    style={{
-      position: "absolute",
-      top: 0,
-      left: "-75%",
-      width: "50%",
-      height: "100%",
-      background:
-        "linear-gradient(120deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 100%)",
-      transform: "skewX(-25deg)",
-      animation: "shine 2.5s infinite",
-      pointerEvents: "none", // so it doesn't block image interaction
-      borderRadius: "6px",
-    }}
-  />
-  <style>
-    {`
-      @keyframes shine {
-        0% {
-          left: -75%;
-        }
-        100% {
-          left: 125%;
-        }
-      }
-    `}
-  </style>
-</div>
+          @keyframes pulseScale {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+          }
 
+          @keyframes slideX {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(150px); }
+          }
 
-    {/* Right Image with overlay */}
-    <div style={{ position: "relative", width: "300px", height: "200px" }}>
-      <>
-  <style>
-    {`
-      @keyframes pulseScale {
-        0%, 100% {
-          transform: scale(1);
-        }
-        50% {
-          transform: scale(1.05);
-        }
-      }
-    `}
-  </style>
+          @keyframes fadeSlideIn {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+          }
 
-  <img
-    src="https://craftedcampus.com/wp-content/uploads/2025/02/What-is-Data-Analytics-e1739157317705.webp"
-    alt="Right"
-    style={{
-      borderRadius: "6px",
-      width: "100%",
-      height: "100%",
-      objectFit: "cover",
-      animation: "pulseScale 5s ease-in-out infinite",
-    }}
-  />
-</>
+          .contact-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 40px 20px;
+          }
 
-      <div
-  style={{
-    position: "absolute",
-    bottom: 0,
-    left: 0,
-    width: "100%",
-    overflow: "hidden", // hide overflow so sliding is clean
-  }}
->
-  
-</div>
-<div
-  style={{
-    backgroundColor: "#00d9ffff",
-    color: "#fff",
-    padding: "12px 16px",
-    fontWeight: "bold",
-    fontSize: "16px",
-    textAlign: "left",
-    borderBottomLeftRadius: "6px",
-    borderBottomRightRadius: "6px",
-    width: "400px",      
-    height: "150px",     
-    whiteSpace: "nowrap",
-    animation: "slideX 4s ease-in-out infinite alternate",
-    cursor: "pointer",
-    margin: "0 auto", // center the card
-    position: "relative", // optional for more layout control
-    display: "inline-block",
-  }}
->
-  <div style={{ fontWeight: "normal", fontSize: "12px" }}>
-    To discuss rates work process payment option terms & conditions etc:
-  </div>
-  <div style={{ fontSize: "18px", fontWeight: "bold", marginTop: "5px" }}>
-    Get in touch with us today.
-  </div>
+          .img-card, .pulse-card {
+            position: relative;
+            border-radius: 6px;
+            overflow: hidden;
+          }
 
-  <style>
-    {`
-      @keyframes slideX {
-        0% {
-          transform: translateX(0);
-        }
-        100% {
-          transform: translateX(150px); /* Only move 30px to the right */
-        }
-      }
-    `}
-  </style>
-</div>
+          .img-card {
+            width: 300px;
+            height: 400px;
+          }
 
+          .pulse-card {
+            width: 300px;
+            height: 200px;
+          }
 
-    </div>
-  </div>
+          .shine {
+            position: absolute;
+            top: 0;
+            left: -75%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(
+              120deg,
+              rgba(255,255,255,0) 0%,
+              rgba(255,255,255,0.4) 50%,
+              rgba(255,255,255,0) 100%
+            );
+            transform: skewX(-25deg);
+            animation: shine 2.5s infinite;
+            pointer-events: none;
+          }
 
+          .slide-box {
+            background-color: #00d9ff;
+            color: white;
+            padding: 12px 16px;
+            font-weight: bold;
+            font-size: 16px;
+            text-align: left;
+            border-radius: 6px;
+            width: 100%;
+            max-width: 400px;
+            animation: slideX 4s ease-in-out infinite alternate;
+            margin-top: 10px;
+          }
 
+          .info-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            background: #fff;
+            padding: 60px 20px;
+          }
 
+          .contact-info, .contact-form {
+            flex: 1 1 320px;
+            max-width: 500px;
+          }
 
-
-<div
-  style={{
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "flex-start",
-    padding: "60px 20px",
-    fontFamily: "Arial, sans-serif",
-    backgroundColor: "#fff",
-  }}
->
-  {/* Left Side: Contact Info */}
-  <>
-    <style>
-      {`
-        @keyframes fadeSlideIn {
-          0% {
+          .animated-container {
+            background: #111827;
+            color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            animation: fadeSlideIn 0.8s ease-out forwards;
             opacity: 0;
-            transform: translateY(20px);
           }
-          100% {
-            opacity: 1;
-            transform: translateY(0);
+
+          .animated-item {
+            display: flex;
+            margin-bottom: 20px;
+            animation: fadeSlideIn 0.8s ease-out forwards;
+            opacity: 0;
           }
-        }
-        .animated-container {
-          animation: fadeSlideIn 0.8s ease-out forwards;
-          opacity: 0;
-        }
-        .animated-item {
-          animation: fadeSlideIn 0.8s ease-out forwards;
-          opacity: 0;
-        }
-      `}
-    </style>
 
-    <div style={{ maxWidth: "400px", marginRight: "40px" }}>
-      <div style={{ color: "#0066ff", fontSize: "12px", fontWeight: "bold" }}>
-        CONTACT US
-      </div>
-      <h2 style={{ fontSize: "24px", color: "#374151", margin: "10px 0 30px" }}>
-        Benefits of Working <br /> With Us!
-      </h2>
+          .icon-box {
+            background-color: #4B5563;
+            width: 36px;
+            height: 36px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+            font-size: 18px;
+            color: #fff;
+          }
 
-      <div
-        className="animated-container"
-        style={{
-          backgroundColor: "#111827",
-          color: "#fff",
-          borderRadius: "8px",
-          padding: "20px",
-        }}
-      >
-        {/* Location */}
-        <div
-          className="animated-item"
-          style={{
-            display: "flex",
-            marginBottom: "20px",
-            animationDelay: "0.2s",
-            animationFillMode: "forwards",
-          }}
-        >
-          <div
+          .contact-form {
+            background: #faf1ec;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+            padding: 30px;
+            transition: background-color 0.3s ease;
+          }
+
+          .contact-form:hover {
+            background-color: #f0e6e1;
+          }
+
+          .contact-form h3 {
+            text-align: center;
+            font-size: 26px;
+            font-weight: bold;
+            color: #004fcc;
+            margin-bottom: 20px;
+            cursor: pointer;
+          }
+
+          .form-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 15px;
+          }
+
+          .form-row input, .contact-form textarea {
+            flex: 1 1 140px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+          }
+
+          .contact-form textarea {
+            width: 100%;
+            resize: none;
+          }
+
+          .contact-form-btn {
+            background-color: #0066ff;
+            color: #fff;
+            padding: 10px 25px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+          }
+
+          .contact-form-btn:hover {
+            background-color: #004acc;
+          }
+
+          @media (max-width: 768px) {
+            .contact-wrapper {
+              flex-direction: column;
+              align-items: center;
+            }
+
+            .img-card, .pulse-card {
+              width: 90%;
+              max-width: 400px;
+            }
+
+            .slide-box {
+              font-size: 14px;
+              padding: 10px;
+            }
+          }
+        `}
+      </style>
+
+      {/* Top Section with Image Cards */}
+      <div className="contact-wrapper">
+        {/* Left Image */}
+        <div className="img-card">
+          <img
+            src="https://craftedcampus.com/wp-content/uploads/2025/02/1705041419958.webp"
+            alt="Left"
+            style={{ width: "100%", height: "100%", objectFit: "cover" }}
+          />
+          <div className="shine" />
+        </div>
+
+        {/* Right Image with animated box */}
+        <div className="pulse-card">
+          <img
+            src="https://craftedcampus.com/wp-content/uploads/2025/02/What-is-Data-Analytics-e1739157317705.webp"
+            alt="Right"
             style={{
-              backgroundColor: "#4B5563",
-              width: "36px",
-              height: "36px",
               borderRadius: "6px",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              marginRight: "12px",
-              fontSize: "18px",
-              color: "#ffffff",
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              animation: "pulseScale 5s ease-in-out infinite",
             }}
-          >
-            <i className="fas fa-map-marker-alt"></i>
-          </div>
-          <div>
-            <div style={{ fontWeight: "bold" }}>Location</div>
-            <div style={{ fontSize: "13px" }}>
-              Address: GN 34/1, Aurora Waterfront, Unit-820
+          />
+          <div className="slide-box">
+            <div style={{ fontSize: "12px", fontWeight: "normal" }}>
+              To discuss rates, work process, payment options, terms & conditions:
             </div>
-          </div>
-        </div>
-
-        {/* Phone */}
-        <div
-          className="animated-item"
-          style={{
-            display: "flex",
-            marginBottom: "20px",
-            animationDelay: "0.4s",
-            animationFillMode: "forwards",
-          }}
-        >
-          <div
-            style={{
-              backgroundColor: "#4B5563",
-              width: "36px",
-              height: "36px",
-              borderRadius: "6px",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              marginRight: "12px",
-              fontSize: "18px",
-              color: "#ffffff",
-            }}
-          >
-            <i className="fas fa-phone-alt"></i>
-          </div>
-          <div>
-            <div style={{ fontWeight: "bold" }}>Phone Number</div>
-            <div style={{ fontSize: "13px" }}>+91 81000 71784</div>
-          </div>
-        </div>
-
-        {/* Email */}
-        <div
-          className="animated-item"
-          style={{
-            display: "flex",
-            animationDelay: "0.6s",
-            animationFillMode: "forwards",
-          }}
-        >
-          <div
-            style={{
-              backgroundColor: "#4B5563",
-              width: "36px",
-              height: "36px",
-              borderRadius: "6px",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              marginRight: "12px",
-              fontSize: "18px",
-              color: "#ffffff",
-            }}
-          >
-            <i className="far fa-envelope-open"></i>
-          </div>
-          <div>
-            <div style={{ fontWeight: "bold" }}>Email Address</div>
-            <div style={{ fontSize: "13px", color: "#ffffffff" }}>
-              info@craftedcampus.com
+            <div style={{ fontSize: "18px", marginTop: "5px" }}>
+              Get in touch with us today.
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </>
 
-  {/* Right Side: Form */}
-<>
-  <style>
-    {`
-      .contact-form {
-        background-color: #faf1ecff;
-        border-radius: 8px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-        padding: 30px;
-        width: auto;
-        transition: background-color 0.3s ease;
-      }
+      {/* Bottom Section with Contact Info and Form */}
+      <div className="info-section">
+        {/* Left: Info */}
+        <div className="contact-info">
+          <div style={{ color: "#0066ff", fontSize: "12px", fontWeight: "bold" }}>
+            CONTACT US
+          </div>
+          <h2 style={{ fontSize: "24px", color: "#374151", margin: "10px 0 30px" }}>
+            Benefits of Working <br /> With Us!
+          </h2>
+          <div className="animated-container">
+            {/* Location */}
+            <div className="animated-item" style={{ animationDelay: "0.2s" }}>
+              <div className="icon-box">
+                <i className="fas fa-map-marker-alt" />
+              </div>
+              <div>
+                <div style={{ fontWeight: "bold" }}>Location</div>
+                <div style={{ fontSize: "13px" }}>
+                  Address: GN 34/1, Aurora Waterfront, Unit-820
+                </div>
+              </div>
+            </div>
 
-      .contact-form:hover {
-        background-color: #f0e6e1;
-      }
+            {/* Phone */}
+            <div className="animated-item" style={{ animationDelay: "0.4s" }}>
+              <div className="icon-box">
+                <i className="fas fa-phone-alt" />
+              </div>
+              <div>
+                <div style={{ fontWeight: "bold" }}>Phone Number</div>
+                <div style={{ fontSize: "13px" }}>+91 81000 71784</div>
+              </div>
+            </div>
 
-      .contact-form-btn {
-        background-color: #0066ff;
-        color: #fff;
-        padding: 10px 25px;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        font-weight: bold;
-        transition: background-color 0.3s ease;
-      }
+            {/* Email */}
+            <div className="animated-item" style={{ animationDelay: "0.6s" }}>
+              <div className="icon-box">
+                <i className="far fa-envelope-open" />
+              </div>
+              <div>
+                <div style={{ fontWeight: "bold" }}>Email Address</div>
+                <div style={{ fontSize: "13px", color: "#ffffff" }}>
+                  info@craftedcampus.com
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-      .contact-form-btn:hover {
-        background-color: #004acc;
-      }
-    `}
-  </style>
-
-  <div className="contact-form">
-    <Link to="/contact" style={{ textDecoration: 'none' }}>
-     <h3
-       style={{
-         textAlign: 'center',
-         padding: '5px',
-         fontSize: '26px',
-         fontWeight: 'bold',
-         color: '#004fcc',
-         cursor: 'pointer',
-       }}
-     >
-       Get in touch
-     </h3>
-   </Link>
-    <div style={{ display: "flex", gap: "10px", marginBottom: "15px" }}>
-      <input
-        type="text"
-        placeholder="Your name here"
-        style={{
-          flex: 1,
-          padding: "10px",
-          border: "1px solid #ccc",
-          borderRadius: "4px",
-        }}
-      />
-      <input
-        type="email"
-        placeholder="Your email here"
-        style={{
-          flex: 1,
-          padding: "10px",
-          border: "1px solid #ccc",
-          borderRadius: "4px",
-        }}
-      />
-    </div>
-
-    <div style={{ display: "flex", gap: "10px", marginBottom: "15px" }}>
-      <input
-        type="text"
-        placeholder="Your subject here"
-        style={{
-          flex: 1,
-          padding: "10px",
-          border: "1px solid #ccc",
-          borderRadius: "4px",
-        }}
-      />
-      <input
-        type="text"
-        placeholder="Your phone number here"
-        style={{
-          flex: 1,
-          padding: "10px",
-          border: "1px solid #ccc",
-          borderRadius: "4px",
-        }}
-      />
-    </div>
-
-    <textarea
-      placeholder="Tell us a few words"
-      rows="4"
-      style={{
-        width: "100%",
-        padding: "10px",
-        border: "1px solid #ccc",
-        borderRadius: "4px",
-        marginBottom: "15px",
-      }}
-    ></textarea>
-
-    <button className="contact-form-btn">SEND MESSAGE</button>
-  </div>
-</>
-</div>
-
-
+        {/* Right: Contact Form */}
+        <div className="contact-form">
+          <Link to="/contact" style={{ textDecoration: "none" }}>
+            <h3>Get in touch</h3>
+          </Link>
+          <div className="form-row">
+            <input type="text" placeholder="Your name here" />
+            <input type="email" placeholder="Your email here" />
+          </div>
+          <div className="form-row">
+            <input type="text" placeholder="Your subject here" />
+            <input type="text" placeholder="Your phone number here" />
+          </div>
+          <textarea rows="4" placeholder="Tell us a few words..." />
+          <button className="contact-form-btn">SEND MESSAGE</button>
+        </div>
+      </div>
+    </>
 
 
 
