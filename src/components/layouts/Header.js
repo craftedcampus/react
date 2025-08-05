@@ -31,8 +31,12 @@ const Header = () => {
 
       {/* Navigation */}
       <nav className={`nav ${mobileMenuOpen ? "open" : ""}`}>
-        <Link to="/" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Home</Link>
-        <Link to="/about" className="nav-link" onClick={() => setMobileMenuOpen(false)}>About Us</Link>
+        <Link to="/" className="nav-link" onClick={() => setMobileMenuOpen(false)}>
+          Home
+        </Link>
+        <Link to="/about" className="nav-link" onClick={() => setMobileMenuOpen(false)}>
+          About Us
+        </Link>
 
         {/* Dropdown Menu */}
         <div
@@ -41,36 +45,46 @@ const Header = () => {
           onMouseLeave={() => !mobileMenuOpen && setShowDropdown(false)}
           onClick={mobileMenuOpen ? toggleDropdown : undefined}
         >
-<<<<<<< HEAD
-          <span className="nav-link">
-            Our Services <span style={{ fontSize: '12px' }}>▼</span>
-          </span>
-=======
           <Link
-  to="/service"
-  className="nav-link"
-  onClick={() => {
-    setShowDropdown(false);
-    setMobileMenuOpen(false);
-  }}
->
-  Our Services <span style={{ fontSize: "12px" }}>▼</span>
-</Link>
+            to="/service"
+            className="nav-link"
+            onClick={() => {
+              setShowDropdown(false);
+              setMobileMenuOpen(false);
+            }}
+          >
+            Our Services <span style={{ fontSize: "12px" }}>▼</span>
+          </Link>
 
->>>>>>> 576bb06 (Updated header style and added button hover)
           <div className={`dropdown ${showDropdown ? "show" : ""}`}>
-            <Link to="/services/appdev" onClick={() => setMobileMenuOpen(false)}>Application Development</Link>
-            <Link to="/services/digitalmarketing" onClick={() => setMobileMenuOpen(false)}>Digital Marketing</Link>
-            <Link to="/services/ecommercedev" onClick={() => setMobileMenuOpen(false)}>eCommerce Development</Link>
-            <Link to="/services/webdev" onClick={() => setMobileMenuOpen(false)}>Web Development</Link>
+            <Link to="/services/appdev" onClick={() => setMobileMenuOpen(false)}>
+              Application Development
+            </Link>
+            <Link to="/services/digitalmarketing" onClick={() => setMobileMenuOpen(false)}>
+              Digital Marketing
+            </Link>
+            <Link to="/services/ecommercedev" onClick={() => setMobileMenuOpen(false)}>
+              eCommerce Development
+            </Link>
+            <Link to="/services/webdev" onClick={() => setMobileMenuOpen(false)}>
+              Web Development
+            </Link>
           </div>
         </div>
 
-        <Link to="/partners" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Partner’s</Link>
-        <Link to="/career" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Career</Link>
-        <Link to="/contact" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Contact</Link>
+        <Link to="/partners" className="nav-link" onClick={() => setMobileMenuOpen(false)}>
+          Partner’s
+        </Link>
+        <Link to="/career" className="nav-link" onClick={() => setMobileMenuOpen(false)}>
+          Career
+        </Link>
+        <Link to="/contact" className="nav-link" onClick={() => setMobileMenuOpen(false)}>
+          Contact
+        </Link>
 
-        <a href="tel:+918100071784" className="phone-button">8100071784</a>
+        <a href="tel:+918100071784" className="phone-button">
+          8100071784
+        </a>
       </nav>
     </header>
   );
