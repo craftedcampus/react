@@ -40,53 +40,69 @@ const slides = [
 
   return (
     <>
-   <section
-      style={{
-        position: 'relative',
-        backgroundImage: `url(${slides[currentIndex]})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        height: '550px',
-        color: 'white',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
-        textAlign: 'center',
-        padding: '0 20px',
-        transition: 'background-image 1s ease-in-out',
-      }}
-    >
-      <div
-        style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          backgroundColor: 'rgba(0,0,0,0.5)',
-          zIndex: 0,
-        }}
-      ></div>
-      <div
-        style={{
-          position: 'relative',
-          zIndex: 1,
-          paddingLeft: '150px',
-          width: '100%',
-          fontFamily: 'Poppins, sans-serif',
-        }}
-      >
-        <div style={{ textAlign: 'left' }}>
-          <h1 style={{ fontSize: '48px', lineHeight: 1.3, margin: 0 }}>
-            Partner’s
-          </h1>
-          <h1 style={{ fontSize: '18px', lineHeight: 1.3, margin: 0 }}>
-            Home {'>>'} Partner’s
-          </h1>
-        </div>
-      </div>
-    </section>
+  <section
+  style={{
+    position: 'relative',
+    backgroundImage: `url(${slides[currentIndex]})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    height: '550px',
+    color: 'white',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    textAlign: 'center',
+    padding: '0 20px',
+    transition: 'background-image 1s ease-in-out',
+  }}
+>
+  <div
+    style={{
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      right: 0,
+      bottom: 0,
+      backgroundColor: 'rgba(0,0,0,0.5)',
+      zIndex: 0,
+    }}
+  ></div>
+
+  {/* Container with responsive text alignment */}
+  <div className="text-container" style={{
+    position: 'relative',
+    zIndex: 1,
+    paddingLeft: '150px',
+    width: '100%',
+    fontFamily: 'Poppins, sans-serif',
+  }}>
+    <div>
+      <h1 className="heading-large" style={{ fontSize: '48px', lineHeight: 1.3, margin: 0 }}>
+        Partner’s
+      </h1>
+      <h1 className="heading-small" style={{ fontSize: '18px', lineHeight: 1.3, margin: 0 }}>
+        Home {'>>'} Partner’s
+      </h1>
+    </div>
+  </div>
+
+  {/* Styles for responsive alignment */}
+  <style>
+    {`
+      .text-container {
+        text-align: left;
+      }
+      @media (max-width: 768px) {
+        .text-container {
+          text-align: center !important;
+          padding-left: 0 !important;
+        }
+      }
+    `}
+  </style>
+</section>
+
 
   <div
   style={{

@@ -1,3 +1,36 @@
+import React from 'react';
+
+const Try = () => {
+  const containerStyle = {
+    maxWidth: '400px',
+    margin: '80px auto',
+    padding: '20px',
+    textAlign: 'center',
+    fontFamily: 'sans-serif',
+    color: '#34dbeb',
+  };
+
+  const nameStyle = {
+    fontSize: '24px',
+    fontWeight: 'bold',
+    marginBottom: '10px',
+  };
+
+  const designationStyle = {
+    fontSize: '16px',
+    color: '#eb346e',
+  };
+
+  return (
+    <div style={containerStyle}>
+      <div style={nameStyle}>Mohammad Nouman</div>
+      <div style={designationStyle}>Full Stack Developer</div>
+    </div>
+  );
+};
+
+export default Try;
+
 // import React, { useState } from 'react';
 
 // const TodoApp = () => {

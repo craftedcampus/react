@@ -39,52 +39,78 @@ const Ecommercedev = () => {
   return (
     <>
 <section
-      style={{
-        position: 'relative',
-        backgroundImage: `url(${slides[currentIndex]})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        height: '550px',
-        color: '#faf1ec',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
-        textAlign: 'center',
-        padding: '0 20px',
-        transition: 'background-image 1s ease-in-out',
-      }}
-    >
-      <div
-        style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          backgroundColor: 'rgba(0,0,0,0.5)',
-          zIndex: 0,
-        }}
-      ></div>
-      <div
-        style={{
-          position: 'relative',
-          zIndex: 1,
-          paddingLeft: '150px',
-          width: '100%',
-          fontFamily: 'Poppins, sans-serif',
-        }}
-      >
-        <div style={{ textAlign: 'left' }}>
-          <h1 style={{ fontSize: '48px', lineHeight: 1.3, margin: 0 }}>
-            eCommerce development
-          </h1>
-          <h1 style={{ fontSize: '18px', lineHeight: 1.3, margin: 0 }}>
-            Home {'>>'} E-Commerce development
-          </h1>
-        </div>
-      </div>
-    </section>
+  style={{
+    position: 'relative',
+    backgroundImage: `url(${slides[currentIndex]})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    height: '550px',
+    color: '#faf1ec',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: '0 20px',
+    transition: 'background-image 1s ease-in-out',
+  }}
+>
+  {/* Responsive Style */}
+  <style>
+    {`
+      @media (max-width: 768px) {
+        .hero-text-wrapper {
+          padding-left: 0 !important;
+          text-align: center !important;
+          align-items: center !important;
+        }
+      }
+
+      @media (min-width: 769px) {
+        .hero-text-wrapper {
+          padding-left: 150px !important;
+          text-align: left !important;
+          align-items: flex-start !important;
+        }
+      }
+    `}
+  </style>
+
+  {/* Overlay */}
+  <div
+    style={{
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      right: 0,
+      bottom: 0,
+      backgroundColor: 'rgba(0,0,0,0.5)',
+      zIndex: 0,
+    }}
+  ></div>
+
+  {/* Text Block */}
+  <div
+    className="hero-text-wrapper"
+    style={{
+      position: 'relative',
+      zIndex: 1,
+      width: '100%',
+      fontFamily: 'Poppins, sans-serif',
+      display: 'flex',
+      flexDirection: 'column',
+    }}
+  >
+    <div>
+      <h1 style={{ fontSize: '48px', lineHeight: 1.3, margin: 0 }}>
+        eCommerce Development
+      </h1>
+      <h1 style={{ fontSize: '18px', lineHeight: 1.3, margin: 0 }}>
+        Home {'>>'} E-Commerce Development
+      </h1>
+    </div>
+  </div>
+</section>
+
 
 
   <div className="services-container" style={{ display: 'flex' }}>

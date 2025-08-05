@@ -157,6 +157,7 @@ const Footer = () => {
           <p style={textStyle}>
             <strong>+91 81000 71784</strong>
           </p>
+         
         </div>
 
         {/* Services */}
@@ -178,8 +179,10 @@ const Footer = () => {
       </div>
 
       {/* Footer Bottom */}
-      <div style={bottomStripStyle}>
-        © {new Date().getFullYear()} All rights reserved by{" "}
+      <div style={bottomStripStyle}> <Link to="/author" >
+            ©{" "}
+          </Link>
+         {new Date().getFullYear()} All rights reserved by{" "}
         <span style={{ color: "#0066ff" }}>Crafted Campus Pvt. Ltd.</span> |
         <a
           href="https://craftedcampus.com/privacy-policy-2/"

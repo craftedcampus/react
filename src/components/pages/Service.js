@@ -149,54 +149,72 @@ const Service = () => {
 
 
 
- <section
+ <>
+    <style>{`
+      .service-banner {
+        position: relative;
+        background-size: cover;
+        background-position: center;
+        height: 550px;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        font-family: Poppins, sans-serif;
+        transition: background-image 1s ease-in-out;
+        padding-left: 150px;
+        text-align: left;
+        align-items: flex-start;
+        padding-right: 20px;
+      }
+
+      .overlay {
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background-color: rgba(0,0,0,0.5);
+        z-index: 0;
+      }
+
+      .content {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+      }
+
+      @media (max-width: 768px) {
+        .service-banner {
+          padding-left: 20px !important;
+          text-align: center !important;
+          align-items: center !important;
+        }
+
+        .service-banner h1:first-child {
+          font-size: 28px !important;
+        }
+        .service-banner h1:last-child {
+          font-size: 16px !important;
+        }
+      }
+    `}</style>
+
+    <section
+      className="service-banner"
       style={{
-        position: 'relative',
         backgroundImage: `url(${slides[current]})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        height: '550px',
-        color: 'white',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
-        textAlign: 'center',
-        padding: '0 20px',
-        transition: 'background-image 1s ease-in-out',
       }}
     >
-      <div
-        style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          backgroundColor: 'rgba(0,0,0,0.5)',
-          zIndex: 0,
-        }}
-      ></div>
+      <div className="overlay"></div>
 
-      <div
-        style={{
-          position: 'relative',
-          zIndex: 1,
-          paddingLeft: '150px',
-          width: '100%',
-          fontFamily: 'Poppins, sans-serif',
-        }}
-      >
-        <div style={{ textAlign: 'left' }}>
-          <h1 style={{ fontSize: '48px', lineHeight: 1.3, margin: 0 }}>
-            Our Services
-          </h1>
-          <h1 style={{ fontSize: '18px', lineHeight: 1.3, margin: 0 }}>
-            Home {'>>'} Our Services
-          </h1>
-        </div>
+      <div className="content">
+        <h1 style={{ fontSize: "48px", lineHeight: 1.3, margin: 0 }}>
+          Our Services
+        </h1>
+        <h1 style={{ fontSize: "18px", lineHeight: 1.3, margin: 0 }}>
+          Home {'>>'} Our Services
+        </h1>
       </div>
     </section>
+  </>
 
 
 

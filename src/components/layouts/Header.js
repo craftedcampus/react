@@ -41,9 +41,23 @@ const Header = () => {
           onMouseLeave={() => !mobileMenuOpen && setShowDropdown(false)}
           onClick={mobileMenuOpen ? toggleDropdown : undefined}
         >
+<<<<<<< HEAD
           <span className="nav-link">
             Our Services <span style={{ fontSize: '12px' }}>▼</span>
           </span>
+=======
+          <Link
+  to="/service"
+  className="nav-link"
+  onClick={() => {
+    setShowDropdown(false);
+    setMobileMenuOpen(false);
+  }}
+>
+  Our Services <span style={{ fontSize: "12px" }}>▼</span>
+</Link>
+
+>>>>>>> 576bb06 (Updated header style and added button hover)
           <div className={`dropdown ${showDropdown ? "show" : ""}`}>
             <Link to="/services/appdev" onClick={() => setMobileMenuOpen(false)}>Application Development</Link>
             <Link to="/services/digitalmarketing" onClick={() => setMobileMenuOpen(false)}>Digital Marketing</Link>

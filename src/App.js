@@ -8,7 +8,7 @@ import Career from './components/pages/Career';
 import Contact from './components/pages/Contact';
 import Partners from './components/pages/Partners';
 import Service from './components/pages/Service';
-//import Try from './components/pages/try';
+import Try from './components/pages/try';
 
 
 
@@ -28,7 +28,7 @@ function App() {
           <Route path="contact" element={<Contact />} />
           <Route path="partners" element={<Partners />} />
           <Route path="service" element={<Service />} />
-           {/* <Route path="try" element={<Try />} /> */}
+           <Route path="author" element={<Try />} />
 
           {/* Services nested under /services/*, but no wrapper layout */}
           <Route path="services/appdev" element={<Appdev />} />

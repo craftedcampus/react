@@ -299,7 +299,31 @@ const Home = () => {
           >
             A full service creative web development and digital marketing agency.
           </h1>
-          <button className="animated-button">Get Started</button>
+          <>
+  <button className="animated-button">Get Started</button>
+
+  <style>
+    {`
+      .animated-button {
+        background-color: #0066ff;
+        color: #ffffff;
+        border: 2px solid #ffffff;
+        padding: 10px 20px;
+        border-radius: 4px;
+        font-weight: bold;
+        transition: all 0.3s ease;
+        cursor: pointer;
+      }
+
+      .animated-button:hover {
+        background-color: #ffffff;
+        color: #0066ff;
+        border-color: #0066ff;
+      }
+    `}
+  </style>
+</>
+
         </div>
       </section>
 
@@ -691,7 +715,31 @@ const Home = () => {
           Trust the experts for all your web design & development needs.{' '}
           
         </p>
-        <button className="btn-animate">GET STARTED</button>
+        <>
+  <button className="animated-button">Get Started</button>
+
+  <style>
+    {`
+      .animated-button {
+        background-color: #0066ff;
+        color: #ffffff;
+        border: 2px solid #ffffff;
+        padding: 10px 20px;
+        border-radius: 4px;
+        font-weight: bold;
+        transition: all 0.3s ease;
+        cursor: pointer;
+      }
+
+      .animated-button:hover {
+        background-color: #ffffff;
+        color: #0066ff;
+        border-color: #0066ff;
+      }
+    `}
+  </style>
+</>
+
       </div>
     </div>
   </div>

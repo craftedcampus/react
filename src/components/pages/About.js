@@ -54,56 +54,69 @@ const About = () => {
 
 
 
+<section
+  style={{
+    position: 'relative',
+    backgroundImage: `url(${slides[current]})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    height: '550px',
+    color: 'white',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'flex-start',  // Left align on desktop
+    textAlign: 'left',         // Text left on desktop
+    padding: '0 20px',
+    transition: 'background-image 1s ease-in-out',
+  }}
+>
+  <style>{`
+    @media (max-width: 768px) {
+      .hero-text {
+        padding-left: 0 !important;
+        width: 100% !important;
+        text-align: center !important;
+        align-items: center !important;
+      }
+    }
+  `}</style>
 
- <section
-      style={{
-        position: 'relative',
-        backgroundImage: `url(${slides[current]})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        height: '550px',
-        color: 'white',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
-        textAlign: 'center',
-        padding: '0 20px',
-        transition: 'background-image 1s ease-in-out',
-      }}
-    >
-      <div
-        style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          backgroundColor: 'rgba(0,0,0,0.5)',
-          zIndex: 0,
-        }}
-      ></div>
+  <div
+    style={{
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      right: 0,
+      bottom: 0,
+      backgroundColor: 'rgba(0,0,0,0.5)',
+      zIndex: 0,
+    }}
+  ></div>
 
-      <div
-        style={{
-          position: 'relative',
-          zIndex: 1,
-          paddingLeft: '150px',
-          width: '100%',
-          fontFamily: 'Poppins, sans-serif',
-        }}
-      >
-        <div style={{ textAlign: 'left' }}>
-          <h1 style={{ fontSize: '48px', lineHeight: 1.3, margin: 0 }}>
-            About Us
-          </h1>
-          <h1 style={{ fontSize: '18px', lineHeight: 1.3, margin: 0 }}>
-            Home {'>>'} About Us
-          </h1>
-        </div>
-      </div>
-    </section>
-
+  <div
+    className="hero-text"
+    style={{
+      position: 'relative',
+      zIndex: 1,
+      paddingLeft: '150px',   // Padding on desktop for left alignment
+      width: '100%',
+      fontFamily: 'Poppins, sans-serif',
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'flex-start',  // Left align on desktop
+    }}
+  >
+    <div>
+      <h1 style={{ fontSize: '48px', lineHeight: 1.3, margin: 0 }}>
+        About Us
+      </h1>
+      <h1 style={{ fontSize: '18px', lineHeight: 1.3, margin: 0 }}>
+        Home {'>>'} About Us
+      </h1>
+    </div>
+  </div>
+</section>
 
     
 

@@ -34,53 +34,66 @@ const Contact = () => {
   return (
     <>
 
-   <section
-      style={{
-        position: 'relative',
-        backgroundImage: `url(${slides[currentIndex]})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        height: '550px',
-        color: 'white',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
-        textAlign: 'center',
-        padding: '0 20px',
-        transition: 'background-image 1s ease-in-out',
-      }}
-    >
-      <div
-        style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          backgroundColor: 'rgba(0,0,0,0.5)',
-          zIndex: 0,
-        }}
-      ></div>
-      <div
-        style={{
-          position: 'relative',
-          zIndex: 1,
-          paddingLeft: '150px',
-          width: '100%',
-          fontFamily: 'Poppins, sans-serif',
-        }}
-      >
-        <div style={{ textAlign: 'left' }}>
-          <h1 style={{ fontSize: '48px', lineHeight: 1.3, margin: 0 }}>
-            Contact
-          </h1>
-          <h1 style={{ fontSize: '18px', lineHeight: 1.3, margin: 0 }}>
-            Home {'>>'} Contact
-          </h1>
-        </div>
-      </div>
-    </section>
+<section
+  style={{
+    position: 'relative',
+    backgroundImage: `url(${slides[currentIndex]})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    height: '550px',
+    color: 'white',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',   // center by default (mobile)
+    textAlign: 'center',     // center by default (mobile)
+    padding: '0 20px',
+    transition: 'background-image 1s ease-in-out',
+  }}
+>
+  <style>{`
+    @media (min-width: 769px) {
+      .content-wrapper {
+        padding-left: 150px !important;
+        text-align: left !important;
+        align-items: flex-start !important;
+      }
+    }
+  `}</style>
+
+  <div
+    style={{
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      right: 0,
+      bottom: 0,
+      backgroundColor: 'rgba(0,0,0,0.5)',
+      zIndex: 0,
+    }}
+  ></div>
+
+  <div
+    className="content-wrapper"
+    style={{
+      position: 'relative',
+      zIndex: 1,
+      width: '100%',
+      fontFamily: 'Poppins, sans-serif',
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',  // center on mobile by default
+    }}
+  >
+    <div>
+      <h1 style={{ fontSize: '48px', lineHeight: 1.3, margin: 0 }}>Contact</h1>
+      <h1 style={{ fontSize: '18px', lineHeight: 1.3, margin: 0 }}>
+        Home {'>>'} Contact
+      </h1>
+    </div>
+  </div>
+</section>
+
 
 
    {/* Outer wrapper with white background */}
