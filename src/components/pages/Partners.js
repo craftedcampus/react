@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const Partner = () => {
 
@@ -159,12 +160,11 @@ const slides = [
     alt="Team"
     style={{
       width: '100%',
-      height: '70vh',
+      height: 'auto',
       maxWidth: '1120px',
       borderRadius: '6px',
       margin: '0 auto',
       display: 'block',
-      animation: 'fadeInOut 5s ease-in-out infinite',
     }}
   />
 </>
@@ -380,31 +380,31 @@ const slides = [
 >
   
 </div>
-
 <div
-    style={{
-  backgroundColor: "#00d9ffff",
-  color: "#fff",
-  padding: "12px 16px",
-  fontWeight: "bold",
-  fontSize: "16px",
-  textAlign: "left",
-  borderBottomLeftRadius: "6px",
-  borderBottomRightRadius: "6px",
-  width: "400px",      // fixed width, adjust as needed
-  height: "150px",      // fixed height, adjust as needed
-  whiteSpace: "nowrap",
-  animation: "slideX 4s ease-in-out infinite alternate",
-  cursor: "pointer",
-}}
-
-  >
-    <div style={{ fontWeight: "normal", fontSize: "12px" }}>
-      To discuss rates work process payment option terms & conditions etc:
-    </div>
-    <div style={{ fontSize: "18px", fontWeight: "bold", marginTop: "5px" }}>
-      Get in touch with us today.
-    </div>
+  style={{
+    backgroundColor: "#00d9ffff",
+    color: "#fff",
+    padding: "12px 16px",
+    fontWeight: "bold",
+    fontSize: "16px",
+    textAlign: "left",
+    borderBottomLeftRadius: "6px",
+    borderBottomRightRadius: "6px",
+    width: "400px",      
+    height: "150px",     
+    whiteSpace: "nowrap",
+    animation: "slideX 4s ease-in-out infinite alternate",
+    cursor: "pointer",
+    margin: "0 auto", // center the card
+    position: "relative", // optional for more layout control
+    display: "inline-block",
+  }}
+>
+  <div style={{ fontWeight: "normal", fontSize: "12px" }}>
+    To discuss rates work process payment option terms & conditions etc:
+  </div>
+  <div style={{ fontSize: "18px", fontWeight: "bold", marginTop: "5px" }}>
+    Get in touch with us today.
   </div>
 
   <style>
@@ -414,11 +414,13 @@ const slides = [
           transform: translateX(0);
         }
         100% {
-          transform: translateX(calc(100vw - 100%));
+          transform: translateX(150px); /* Only move 30px to the right */
         }
       }
     `}
   </style>
+</div>
+
 
     </div>
   </div>
@@ -616,6 +618,20 @@ const slides = [
   </style>
 
   <div className="contact-form">
+    <Link to="/contact" style={{ textDecoration: 'none' }}>
+     <h3
+       style={{
+         textAlign: 'center',
+         padding: '5px',
+         fontSize: '26px',
+         fontWeight: 'bold',
+         color: '#004fcc',
+         cursor: 'pointer',
+       }}
+     >
+       Get in touch
+     </h3>
+   </Link>
     <div style={{ display: "flex", gap: "10px", marginBottom: "15px" }}>
       <input
         type="text"

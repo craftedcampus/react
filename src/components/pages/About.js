@@ -512,7 +512,19 @@ const About = () => {
       }
 
       .service-card:hover .service-icon {
-        color: #0066ff; /* blue on hover */
+        color: #0066ff;
+      }
+
+      .service-card p {
+        font-size: 16px;
+        font-weight: 500;
+        margin: 0;
+        color: #ffffff;
+        transition: color 0.3s ease;
+      }
+
+      .service-card:hover p {
+        color: #0066ff;
       }
     `}
   </style>
@@ -522,18 +534,11 @@ const About = () => {
       <div className="service-icon">
         <FontAwesomeIcon icon={item.icon} />
       </div>
-      <p
-        style={{
-          fontSize: '16px',
-          fontWeight: '500',
-          margin: 0,
-        }}
-      >
-        {item.title}
-      </p>
+      <p>{item.title}</p>
     </div>
   ))}
 </div>
+
 
       </div>
 

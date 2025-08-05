@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-
+import { Link } from 'react-router-dom';
 
 const statsData = [
   { number: 243, label: 'Projects Completed' },
@@ -86,7 +86,84 @@ const Home = () => {
   }, []);
 
 
+
+
+
+    const cards = [
+    {
+      title: 'Web Designing',
+      desc: 'Web designing involves creating visually appealing and functional websites that provide an excellent user experience.',
+      link: '/services/digitalmarketing', // 🔗 Add your actual route
+    },
+    {
+      title: 'Web Development',
+      desc: 'Web development involves creating and maintaining websites by combining coding, design, and functionality.',
+      link: '/services/webdev',
+    },
+    {
+      title: 'Web Application',
+      desc: 'A web application is a dynamic software program accessed through a web browser, enabling users to perform tasks or interact with data.',
+      link: '/services/webdev',
+    },
+  ];
+
+
   return <>
+
+  <style>
+{`
+  @media (max-width: 768px) {
+    .merged-card {
+      flex-direction: column;
+      padding: 20px;
+      gap: 20px;
+    }
+
+    .service-item {
+      flex-direction: row;
+    }
+
+    .stats-container {
+      flex-direction: column !important;
+      align-items: center !important;
+      text-align: center;
+    }
+
+    .zoom-img {
+      height: 160px !important;
+    }
+
+    .animated-container form > div {
+      flex-direction: column !important;
+    }
+
+    .animated-container input {
+      min-width: 100% !important;
+    }
+
+    .animated-container textarea {
+      width: 100% !important;
+    }
+
+    .btn-animate {
+      width: 100% !important;
+      margin-top: 1rem;
+    }
+
+    .shine-container {
+      max-width: 100% !important;
+    }
+
+    .shine-container img {
+      border-radius: 10px;
+      width: 100%;
+    }
+  }
+`}
+</style>
+
+
+
       <section
         style={{
           position: 'relative',
@@ -226,25 +303,33 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="merged-card" style={{ position: 'relative', zIndex: 10 }}>
-        {[
-          {
-            title: 'Web Designing',
-            description: 'Creating responsive, user-friendly, and visually appealing websites.',
-            icon: 'https://craftedcampus.com/wp-content/uploads/2025/02/online-learning.webp',
-          },
-          {
-            title: 'Web Development',
-            description: 'Building functional, responsive, and efficient websites with coding expertise.',
-            icon: 'https://craftedcampus.com/wp-content/uploads/2025/02/magnetism-1.webp',
-          },
-          {
-            title: 'Web Application',
-            description: 'Interactive software accessed through browsers, enhancing functionality and user experiences.',
-            icon: 'https://craftedcampus.com/wp-content/uploads/2025/02/selective.webp',
-          },
-        ].map((service, index) => (
-          <div key={index} className="service-item">
+          <section className="merged-card" style={{ position: 'relative', zIndex: 10 }}>
+      {[
+        {
+          title: 'Web Designing',
+          description: 'Creating responsive, user-friendly, and visually appealing websites.',
+          icon: 'https://craftedcampus.com/wp-content/uploads/2025/02/online-learning.webp',
+          link: '/services/ecommercedev',
+        },
+        {
+          title: 'Web Development',
+          description: 'Building functional, responsive, and efficient websites with coding expertise.',
+          icon: 'https://craftedcampus.com/wp-content/uploads/2025/02/magnetism-1.webp',
+          link: '/services/webdev',
+        },
+        {
+          title: 'Web Application',
+          description: 'Interactive software accessed through browsers, enhancing functionality and user experiences.',
+          icon: 'https://craftedcampus.com/wp-content/uploads/2025/02/selective.webp',
+          link: '/services/appdev',
+        },
+      ].map((service, index) => (
+        <Link
+          key={index}
+          to={service.link}
+          style={{ textDecoration: 'none', color: 'inherit' }}
+        >
+          <div className="service-item" style={{ cursor: 'pointer' }}>
             <div className="service-icon">
               <img src={service.icon} alt={service.title} />
             </div>
@@ -253,8 +338,9 @@ const Home = () => {
               <p>{service.description}</p>
             </div>
           </div>
-        ))}
-      </section>
+        </Link>
+      ))}
+    </section>
 
 <>
   <style>
@@ -506,94 +592,88 @@ const Home = () => {
         <h2 style={{ margin: '0.5rem 0', fontSize: '28px' }}>Our Company Solutions</h2>
       </div>
 
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'center',
-          gap: '1.5rem',
-          flexWrap: 'wrap',
-        }}
-      >
-        {[
-          {
-            title: 'Web Designing',
-            desc: 'Web designing involves creating visually appealing and functional websites that provide an excellent user experience.',
-          },
-          {
-            title: 'Web Development',
-            desc: 'Web development involves creating and maintaining websites by combining coding, design, and functionality.',
-          },
-          {
-            title: 'Web Application',
-            desc: 'A web application is a dynamic software program accessed through a web browser, enabling users to perform tasks or interact with data.',
-          },
-        ].map((card, i) => (
-          <div
-            key={i}
-            className="card-hover"
+        <div
+      style={{
+        display: 'flex',
+        justifyContent: 'center',
+        gap: '1.5rem',
+        flexWrap: 'wrap',
+      }}
+    >
+      {cards.map((card, i) => (
+        <div
+          key={i}
+          className="card-hover"
+          style={{
+            backgroundColor: '#fff',
+            color: '#000',
+            padding: '3rem',
+            borderRadius: '10px',
+            maxWidth: '280px',
+            flex: '1',
+            boxShadow: '0 4px 8px rgba(0,0,0,0.05)',
+            minWidth: '180px',
+            minHeight: '300px',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'space-between',
+            transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+            cursor: 'pointer',
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.transform = 'scale(1.03)';
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.transform = 'scale(1)';
+          }}
+        >
+          <div>
+            <h3 style={{ margin: '0 0 1rem' }}>{card.title}</h3>
+            <p style={{ fontSize: '14px', lineHeight: '1.6' }}>{card.desc}</p>
+          </div>
+
+          {/* ✅ Read More with Link */}
+          <Link
+            to={card.link}
             style={{
-              backgroundColor: '#fff',
-              color: '#000',
-              padding: '3rem',
-              borderRadius: '10px',
-              maxWidth: '280px',
-              flex: '1',
-              boxShadow: '0 4px 8px rgba(0,0,0,0.05)',
-              minWidth: '180px',
-              minHeight: '300px',
               display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'space-between',
-              transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-              cursor: 'pointer',
+              alignItems: 'center',
+              gap: '0.5rem',
+              fontWeight: 'bold',
+              marginTop: '1.5rem',
+              textDecoration: 'none',
+              color: 'inherit',
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.transform = 'scale(1.03)';
+              const icon = e.currentTarget.children[0];
+              icon.style.backgroundColor = '#0066ff';
+              icon.style.color = '#fff';
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.transform = 'scale(1)';
+              const icon = e.currentTarget.children[0];
+              icon.style.backgroundColor = '#f3f3f3';
+              icon.style.color = '#000';
             }}
           >
-            <div>
-              <h3 style={{ margin: '0 0 1rem' }}>{card.title}</h3>
-              <p style={{ fontSize: '14px', lineHeight: '1.6' }}>{card.desc}</p>
-            </div>
             <div
               style={{
+                backgroundColor: '#f3f3f3',
+                width: '35px',
+                height: '35px',
+                borderRadius: '50%',
                 display: 'flex',
+                justifyContent: 'center',
                 alignItems: 'center',
-                gap: '0.5rem',
-                fontWeight: 'bold',
-                marginTop: '1.5rem',
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.children[0].style.backgroundColor = '#0066ff';
-                e.currentTarget.children[0].style.color = '#fff';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.children[0].style.backgroundColor = '#f3f3f3';
-                e.currentTarget.children[0].style.color = '#000';
+                transition: 'all 0.3s ease',
               }}
             >
-              <div
-                style={{
-                  backgroundColor: '#f3f3f3',
-                  width: '35px',
-                  height: '35px',
-                  borderRadius: '50%',
-                  display: 'flex',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                  transition: 'all 0.3s ease',
-                }}
-              >
-                →
-              </div>
-              <span>Read more</span>
+              →
             </div>
-          </div>
-        ))}
-      </div>
+            <span>Read more</span>
+          </Link>
+        </div>
+      ))}
+    </div>
 
       {/* Bottom CTA */}
       <div
@@ -824,9 +904,25 @@ const Home = () => {
       transition: 'background-color 0.3s ease',
       cursor: 'pointer',
     }}
-    onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#dcf1f8')}
+    onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#ffffffff')}
     onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#ffffff')}
   >
+    <Link to="/contact" style={{ textDecoration: 'none' }}>
+  <h3
+    style={{
+      textAlign: 'center',
+      padding: '5px',
+      fontSize: '26px',
+      fontWeight: 'bold',
+      color: '#004fcc',
+      cursor: 'pointer',
+    }}
+  >
+    Get in touch
+  </h3>
+</Link>
+
+
     <form>
       {/* Row 1 */}
       <div

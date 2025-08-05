@@ -110,8 +110,8 @@ const Contact = () => {
     >
       {/* Left - Form */}
       <div className="flex-1 max-w-[60%] min-w-[300px]">
-        <h2 className="text-[22px] mb-5 text-[#1f1f1f] font-semibold">Write Us Something</h2>
-        <form className="flex flex-col gap-4">
+        <h2 className="text-[22px] mb-5 text-[#0066ff] font-semibold">Get in touch</h2>
+        <form className="flex flex-col gap-4">    
           <div className="flex gap-4 flex-wrap">
             <input type="text" placeholder="Your name here" className="flex-1 p-2 border border-gray-300 text-sm" />
             <input type="email" placeholder="Your email here" className="flex-1 p-2 border border-gray-300 text-sm" />

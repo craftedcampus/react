@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const styles = `
   @keyframes danceX {
@@ -14,6 +15,8 @@ const styles = `
 
 
 const Ecommercedev = () => {
+
+    const navigate = useNavigate();
 
    const slides = [
     '/page-title.webp',
@@ -95,9 +98,7 @@ const Ecommercedev = () => {
     {/* Menu Buttons */}
     <div className="menu">
       <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', backgroundColor: '#d4effaff' }}>
-        
-
-        <button style={{
+        <button onClick={() => navigate('/services/appdev')} style={{
           backgroundColor: '#ffffff',
           color: '#000',
           padding: '12px 16px',
@@ -109,7 +110,7 @@ const Ecommercedev = () => {
           App Development &nbsp; &gt;
         </button>
 
-        <button style={{
+        <button onClick={() => navigate('/services/digitalmarketing')} style={{
           backgroundColor: '#ffffff',
           color: '#000',
           padding: '12px 16px',
@@ -121,21 +122,19 @@ const Ecommercedev = () => {
           Digital Marketing &nbsp; &gt;
         </button>
 
-        <button style={{
+        <button onClick={() => navigate('/services/ecommercedev')} style={{
           backgroundColor: '#1e2a38',
           color: '#ffffff',
           padding: '12px 16px',
           border: 'none',
           borderRadius: '8px',
           width: '100%',
-          textAlign: 'left',
-          fontWeight: 'bold'
+          textAlign: 'left'
         }}>
           ECommerce &nbsp; &gt;
         </button>
 
-
-        <button style={{
+        <button onClick={() => navigate('/services/webdev')} style={{
           backgroundColor: '#ffffff',
           color: '#000',
           padding: '12px 16px',

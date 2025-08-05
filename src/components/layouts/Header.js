@@ -94,9 +94,9 @@ const Header = () => {
           onMouseLeave={() => setShowDropdown(false)}
           style={{ position: "relative" }}
         >
-          <span style={serviceLinkStyle}>
-            Our Services <span style={{ fontSize: "12px" }}>▼</span>
-          </span>
+         <Link to="/service" style={serviceLinkStyle}>
+    Our Services <span style={{ fontSize: '12px' }}>▼</span>
+  </Link>
           <div style={dropdownStyle}>
             <Link to="/services/appdev" className="nav-link">
               Application Development
@@ -127,10 +127,7 @@ const Header = () => {
         </Link>
 
         {/* Search Icon */}
-        <i
-          className="fas fa-search"
-          style={{ fontSize: "16px", cursor: "pointer" }}
-        ></i>
+       
 
         {/* Phone Button */}
         <a href="tel:+918100071784" style={phoneButtonStyle}>
