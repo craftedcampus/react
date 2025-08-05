@@ -95,3 +95,122 @@ services
 
 
 
+ /* Header Base Styles */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 40px;
+  background-color: #fff;
+  font-family: sans-serif;
+  border-bottom: 1px solid #eee;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.logo img {
+  height: 40px;
+  filter: brightness(0) saturate(100%);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.nav-link {
+  color: #111;
+  text-decoration: none;
+  cursor: pointer;
+  position: relative;
+}
+
+.phone-button {
+  background-color: #0066ff;
+  color: #fff;
+  padding: 10px 20px;
+  font-weight: 700;
+  border-radius: 2px;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.hamburger {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Dropdown */
+.dropdown-wrapper {
+  position: relative;
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  padding: 25px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  display: none;
+  z-index: 10;
+  width: 260px;
+  line-height: 2;
+  flex-direction: column;
+}
+
+.dropdown a {
+  color: #111;
+  text-decoration: none;
+  padding: 5px 0;
+  display: block;
+}
+
+.dropdown.show {
+  display: flex;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: white;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+
+  .nav.open {
+    display: flex;
+  }
+
+  .dropdown {
+    position: static;
+    box-shadow: none;
+    padding: 10px 0;
+  }
+
+  .dropdown-wrapper {
+    width: 100%;
+  }
+}
+
+
+
+
